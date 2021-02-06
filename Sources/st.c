@@ -139,27 +139,27 @@ void bst_inorder(BST *tree) {
 static void _preorder_(TreeNode *node){
     if(node) {
        printf("%d\t", node->data);
-       _inorder_(node->left);
-       _inorder_(node->right);
+       _preorder_(node->left);
+       _preorder_(node->right);
     }  
 }
 
 void bst_preorder(BST *tree) {
     assert(tree != NULL);
-    _inorder_(tree->root);
+    _preorder_(tree->root);
 }
 
 static void _postorder_(TreeNode *node){
     if(node) {
-       _inorder_(node->left);
-       _inorder_(node->right);
+       _postorder_(node->left);
+       _postorder_(node->right);
        printf("%d\t", node->data);
     }  
 }
 
 void bst_postorder(BST *tree) {
     assert(tree != NULL);
-    _inorder_(tree->root);
+    _postorder_(tree->root);
 }
 
 void bst_levelordertraversal(BST *tree){
